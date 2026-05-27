@@ -38,7 +38,7 @@ set_seed()
 ############################################################
 
 client = OpenAI(
-    api_key="sk-57c3885153f144bea96c49387f945240", 
+    api_key="XXX", 
     base_url="https://openwebui.uni-freiburg.de/api"
 )
 
@@ -55,6 +55,7 @@ FAILED_FILE   = os.path.join(BASE_DIR, "failed_triplets_new.json")
 # LOAD STUDIES
 ############################################################
 
+## specify the path to upload the dataset
 csv_path = "C:/Users/paka0001/Desktop/IQ_differences_analyses/batched_triplets/triplet_res_new/triplets_2/preterm_dataset.csv" 
 
 df = pd.read_csv(csv_path)
@@ -173,6 +174,7 @@ import time
 from openai import OpenAI
 
 def ask_llm(textA, textB, textC, A, B, C, max_retries=3, timeout=120):
+### the prompt
     prompt = f"""
 You are an expert in epidemiology and meta-analysis. 
 
